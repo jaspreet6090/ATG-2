@@ -1,0 +1,523 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM%20Plex%20Sans:wght@400;500;600;700");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: background-color 1s ease-out;
+  color: #fff;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.panel {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+section:not(.first) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.panel.align-top {
+  align-items: flex-start;
+}
+
+.slider {
+  width: 16em;
+  position: fixed;
+  top: 100px;
+  left: calc(40% - 8em);
+  z-index: 3;
+}
+
+.slider svg {
+  border-radius: 50%;
+  transition: background-color 1s ease-out;
+
+}
+
+.slider .head {
+  position: relative;
+  top: 12em;
+  left: -170px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 110px;
+  width: max-content;
+}
+
+.slider .head h1 {
+  font-size: 3em;
+}
+
+.slider .head h4 {
+  font-size: 1em;
+}
+
+.content .text {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.com .content {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  align-items: center;
+  padding: 3em 4em;
+  z-index: 2;
+}
+
+.com .content .text {
+  margin: 4em 0;
+}
+
+.content h2 {
+  font-size: 2em;
+  line-height: 3em;
+}
+
+.content .text p {
+  margin-top: 25px;
+}
+
+.com .content .foot {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-top: 1em;
+}
+
+.com .content .foot p:nth-child(2) {
+  text-align: right;
+}
+
+.images {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#slide1 .images {
+  background: #cdcbcf;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 15%;
+}
+
+#slide2 .images {
+  background: #1c0360;
+}
+
+#slide3 .images {
+  background: #141547;
+}
+
+#slide4 .images {
+  background: #0e131c;
+}
+
+#slide5 .images {
+  background: #23cfeb;
+}
+
+#slide6 .images {
+  background: url("./images/interior.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#slide7 .images {
+  background: #01b76a;
+}
+
+#slide1 .images img,
+#slide6 .images img {
+  margin-top: 200px;
+}
+
+#slide1 .images img {
+  width: 100%;
+}
+
+#slide2 .images img:nth-child(1) {
+  width: 33.33%;
+  position: absolute;
+  left: 16.66%;
+  bottom: 0;
+  margin-bottom: -200px;
+}
+
+#slide2 .images img:nth-child(2) {
+  position: absolute;
+  width: 33.33%;
+  top: 0;
+  left: 50%;
+  margin-top: -200px;
+}
+
+#slide3 .images img:nth-child(1) {
+  width: 33.33%;
+  position: absolute;
+  left: 16.66%;
+  bottom: 0;
+  margin-bottom: -200px;
+}
+
+#slide3 .images img:nth-child(2) {
+  position: absolute;
+  width: 33.33%;
+  top: 0;
+  left: 50%;
+  margin-top: calc(-200px + -15%);
+}
+
+#slide4 .images img:nth-child(1) {
+  width: 25%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -200px;
+  margin-left: -200px;
+}
+
+#slide4 .images img:nth-child(2) {
+  position: absolute;
+  width: 28.33%;
+  top: 15%;
+  left: 46.66%;
+  margin-top: -200px;
+}
+
+#slide4 .images img:nth-child(3) {
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 71.66%;
+  margin-top: calc(-200px + -20%);
+}
+
+#slide4 .images img:nth-child(4) {
+  position: absolute;
+  width: 28.33%;
+  bottom: 0;
+  left: 11.66%;
+  margin-bottom: calc(-200px + -2.5%);
+}
+
+#slide4 .images img:nth-child(5) {
+  width: 33.33%;
+  position: absolute;
+  left: 86.66%;
+  bottom: 0;
+  margin-bottom: calc(-200px + -10%);
+  margin-right: -200px;
+}
+
+#slide5 .images img:nth-child(1) {
+  width: 25%;
+  position: absolute;
+  left: 11.66%;
+  top: 0;
+  margin-top: calc(-200px + -12.5%);
+}
+
+#slide5 .images img:nth-child(2) {
+  position: absolute;
+  width: 25%;
+  top: 0;
+  left: 38.35%;
+  margin-top: calc(-200px + -2.5%);
+}
+
+#slide5 .images img:nth-child(3) {
+  width: 25%;
+  position: absolute;
+  top: 30%;
+  left: 84.66%;
+  margin-right: -200px;
+}
+
+#slide5 .images img:nth-child(4) {
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: 11.66%;
+  margin-bottom: calc(-200px + -12.5%);
+}
+
+#slide5 .images img:nth-child(5) {
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: 38.35%;
+  margin-bottom: calc(-200px + -22.5%);
+}
+
+#slide7 .images img:nth-child(1) {
+  width: 41.66%;
+  position: absolute;
+  left: 21.65%;
+  bottom: 0;
+  margin-bottom: calc(-200px + -10%);
+  z-index: 6;
+}
+
+#slide7 .images img:nth-child(2) {
+  position: absolute;
+  width: 33.33%;
+  bottom: 0;
+  left: 50%;
+  margin-bottom: calc(-200px + -5%);
+  z-index: 5;
+}
+
+.head .animates {
+  margin-top: -50px;
+  overflow: hidden;
+  width: max-content;
+}
+
+.owl-carousel {
+  height: 100vh;
+  background: #fff;
+  display: none !important;
+}
+
+.owl-carousel .item {
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: grid;
+  grid-template-rows: 60% 40%;
+}
+
+.owl-carousel .images {
+  height: 60vh;
+}
+
+@media only screen and (max-width: 1366px) {
+  .panel {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .slider {
+    width: 16em;
+    position: fixed;
+    top: 50px;
+    left: calc(50% - 8em);
+    z-index: 3;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 601px) {
+  .slider {
+    width: 10em;
+    position: fixed;
+    top: 25px;
+    left: calc(50% - 5em);
+    z-index: 3;
+  }
+
+  .slider .head {
+    left: -100px;
+  }
+
+  .slider .head h1 {
+    font-size: 1.75em;
+  }
+
+  .slider .head img {
+    height: 40px !important;
+  }
+
+  .slider .head h4 {
+    font-size: 0.75em;
+  }
+
+  .slider .head p {
+    font-size: 0.75em;
+  }
+
+  .content h2 {
+    font-size: 1.3em;
+    line-height: 2em;
+  }
+
+  .content p {
+    font-size: 0.75em;
+  }
+
+  .com .content {
+    padding: 2em 2em;
+  }
+
+  .com .content .text img {
+    height: 60px !important;
+  }
+
+  .com .content .foot {
+    padding-top: 0;
+  }
+
+  .com .content .text {
+    margin: 1em 0;
+  }
+
+  .slider .head {
+    position: relative;
+    top: 7.5em;
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .owl-carousel {
+    display: block !important;
+  }
+
+  .owl-carousel .content img {
+    height: 60px !important;
+    position: absolute;
+    top: calc(60% + 30px);
+    z-index: 6;
+    border: 2px solid transparent;
+    border-radius: 8px;
+  }
+
+  .com {
+    display: none;
+  }
+
+  #slide1 .images img {
+    margin: 0;
+  }
+
+  #slide2 .images img:nth-child(1) {
+    margin: 0;
+  }
+
+  #slide2 .images img:nth-child(2) {
+    margin: 0;
+  }
+
+  #slide3 .images img:nth-child(1) {
+    margin: 0;
+  }
+
+  #slide3 .images img:nth-child(2) {
+    margin: 0;
+    margin-top: -15%;
+  }
+
+  #slide4 .images img:nth-child(1) {
+    margin: 0;
+  }
+
+  #slide4 .images img:nth-child(2) {
+    margin: 0;
+  }
+
+  #slide4 .images img:nth-child(3) {
+    margin: 0;
+    margin-top: -20%;
+  }
+
+  #slide4 .images img:nth-child(4) {
+    margin: 0;
+    margin-bottom: -2.5%;
+  }
+
+  #slide4 .images img:nth-child(5) {
+    margin: 0;
+    margin-bottom: -10%;
+  }
+
+  #slide5 .images img:nth-child(1) {
+    margin: 0;
+    margin-top: -12.5%;
+  }
+
+  #slide5 .images img:nth-child(2) {
+    margin: 0;
+    margin-top: -2.5%;
+  }
+
+  #slide5 .images img:nth-child(3) {
+    margin: 0;
+    margin-left: -15%;
+  }
+
+  #slide5 .images img:nth-child(4) {
+    margin: 0;
+    margin-bottom: -12.5%;
+  }
+
+  #slide5 .images img:nth-child(5) {
+    margin: 0;
+    margin-bottom: -22.5%;
+  }
+
+  #slide6 .images img {
+    margin: 0;
+  }
+
+  #slide7 .images img:nth-child(1) {
+    margin: 0;
+    margin-bottom: -10%;
+  }
+
+  #slide7 .images img:nth-child(2) {
+    margin: 0;
+    margin-bottom: -5%;
+  }
+
+  .content {
+    margin: 2em;
+    margin-top: 6em;
+    overflow: auto;
+  }
+
+  .content h2 {
+    line-height: normal;
+  }
+
+  .content p button {
+    border: none;
+    border-radius: 2.5em;
+    background: #fff;
+    padding: 0.75em;
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .owl-carousel .item {
+    display: grid;
+    grid-template-rows: 50% 50%;
+  }
+
+  .owl-carousel .images {
+    height: 50vh;
+  }
+
+  .owl-carousel .content img {
+    position: absolute;
+    top: calc(50% + 30px);
+  }
+}
